@@ -1,0 +1,574 @@
+/* 
+
+Visas CSS failas parašytas rem formatu, dėl accessibility, girdėjau tai geresnė praktika.
+
+Taip pat svetainė sukurta su transitions, burger menu ir vertical scroll.
+
+Pastebėsit, kad kodo klasės išskirstytos. Dėl šio veiksmo kenčia readability, tačiau kodas yra geriau optimizuotas, nes nei viena kodo eilutė nesikartoja.
+
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Libre Franklin", Arial, Helvetica, sans-serif;
+  --color-light-gray: rgba(165, 165, 165, 0.199);
+  --color-gray: rgb(103, 103, 103);
+  --color-dark: rgb(25, 25, 25);
+  --color-pink: rgb(255, 46, 171);
+}
+
+.hamburger-menu > hr,
+.sign-up > button,
+.nft-cards > article,
+header > nav > a,
+.icons > a > i,
+#hamburger-list {
+  transition: 0.3s;
+}
+
+header,
+section,
+footer {
+  padding-left: 2.5rem;
+  padding-top: 2rem;
+}
+
+.nft-cards,
+.nft-card-flex,
+header,
+#hamburger-list {
+  display: flex;
+}
+
+.nft-card-flex,
+header {
+  justify-content: space-between;
+}
+
+header {
+  padding-right: 1rem;
+}
+
+.launch,
+.opendoor,
+header > nav,
+.additional-text {
+  display: none;
+}
+
+header > nav > a {
+  margin-left: 1.8rem;
+  font-size: 1.4rem;
+}
+
+.sign-up-link,
+.soon {
+  color: var(--color-pink);
+}
+
+header img {
+  width: 250px;
+}
+
+header hr {
+  width: 1.5rem;
+  border: 2px solid rgb(158, 158, 158);
+  margin: 6px;
+}
+
+.nft-cards > article,
+header hr,
+#hamburger-list {
+  border-radius: 1rem;
+}
+
+.press > article,
+.hero,
+.footer-upsell,
+.upsell,
+#hamburger-list {
+  overflow: hidden;
+}
+
+.hamburger {
+  margin-right: 0.5rem;
+}
+
+#hamburger-list {
+  top: 0rem;
+  right: 1rem;
+  width: 10rem;
+  height: 30rem;
+  padding: 0;
+  background: rgb(221, 221, 221);
+  list-style-type: none;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  transform: translateY(-200%);
+}
+
+#hamburger-list:target {
+  transform: translateY(0);
+}
+
+header,
+.hero,
+.footer-upsell,
+.upsell {
+  position: relative;
+  padding-top: 4rem;
+}
+
+.upsell {
+  padding-top: 7rem;
+}
+
+.soon,
+.gloop-series,
+.top-bid,
+.price,
+h4 {
+  text-transform: uppercase;
+}
+
+.soon {
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 1.2rem;
+}
+
+h1 {
+  font-weight: 900;
+  font-size: 3.5rem;
+}
+
+h1,
+.hero > p {
+  width: 320px;
+}
+
+a,
+h4,
+p {
+  color: var(--color-gray);
+}
+
+p {
+  font-size: 1.45rem;
+  line-height: 2.2rem;
+}
+
+.gloop-series,
+.top-bid,
+p {
+  margin-top: 1rem;
+}
+
+.sign-up {
+  background: linear-gradient(45deg, rgb(232, 23, 71), rgb(216, 216, 14));
+  height: 90px;
+  width: 220px;
+  padding: 5px;
+  display: inline-block;
+  margin-bottom: 5rem;
+  margin-top: 0.5rem;
+}
+
+.sign-up,
+.sign-up > button {
+  border-radius: 3rem;
+}
+
+.sign-up > button {
+  background: rgb(255, 255, 255);
+  height: 80px;
+  width: 210px;
+  font-weight: 600;
+  border: none;
+}
+
+.hero > img,
+.footer-upsell > img,
+.upsell img,
+.looks-like-a-bug-but-ill-do-it-anyway,
+#hamburger-list {
+  position: absolute;
+}
+
+.looks-like-a-bug-but-ill-do-it-anyway,
+.hero > img {
+  width: 100%;
+}
+
+.hero > img {
+  max-width: 850px;
+  top: -1rem;
+  left: 15rem;
+}
+
+.upsell {
+  height: 380px;
+}
+
+.upsell > h2 {
+  margin-bottom: 0;
+}
+
+.upsell img {
+  top: 50%;
+  left: 50%;
+  min-height: 380px;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+h2,
+.showcase a,
+h3,
+.price {
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 2.9rem;
+}
+
+.upsell p,
+h2,
+h1,
+h3 {
+  color: var(--color-dark);
+}
+
+.press,
+footer {
+  display: grid;
+}
+
+.press {
+  grid-template-columns: 7fr 8fr;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0.5rem;
+  margin-top: 2.5rem;
+}
+
+.press > article {
+  margin-right: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.press img {
+  min-height: 50px;
+}
+
+.showcase > h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.showcase a,
+footer > article:not(.icons) > a:hover {
+  text-decoration: underline;
+}
+
+.nft-cards {
+  gap: 3rem;
+  padding: 3rem 0 6rem 0;
+  overflow-x: auto; /* Enables horizontal scrolling */
+}
+
+.nft-cards > article {
+  min-width: 340px;
+  background-color: var(--color-light-gray);
+}
+
+.nft-cards > article > img {
+  width: 340px;
+}
+
+.nft-card-flex,
+#hamburger-list {
+  align-items: center;
+}
+
+.nft-card-flex {
+  padding: 0 1.5rem;
+}
+
+h3,
+.gloop-series,
+.top-bid,
+.divider {
+  margin: 0;
+}
+
+.nft-card-flex:last-child > p {
+  font-size: 1.3rem;
+  margin-top: 0.3rem;
+}
+
+.cost > p {
+  display: inline;
+  margin-left: 0.4rem;
+}
+
+h3,
+.last-info > p,
+.sign-up > button {
+  font-size: 1.5rem;
+}
+
+.price {
+  color: black;
+}
+
+.gloop-series,
+.top-bid {
+  font-size: 0.9rem;
+}
+
+.gloop-series {
+  color: rgb(255, 115, 0);
+}
+
+.divider {
+  border: 1px solid var(--color-light-gray);
+}
+
+.bigger-h1 {
+  font-size: 4rem;
+}
+
+.footer-upsell > p {
+  width: 238px;
+}
+
+.footer-upsell > img {
+  bottom: 0;
+  right: -2.5rem;
+  width: 240px;
+}
+
+.footer-upsell > h1,
+.footer-upsell > .soon {
+  margin-top: 0;
+}
+
+.looks-like-a-bug-but-ill-do-it-anyway {
+  top: 2670px;
+  border-left: 0;
+  border-right: 0;
+}
+
+.looks-like-a-bug-but-ill-do-it-anyway,
+#hamburger-list {
+  z-index: 1;
+}
+
+.icons > img {
+  margin-top: 3rem;
+}
+
+a {
+  text-decoration: none;
+  font-size: 1.4rem;
+  padding: 0.5rem 0;
+}
+
+footer > article:not(.icons) > a {
+  display: block;
+}
+
+footer {
+  grid-template-columns: 3fr 4fr;
+}
+
+.icons {
+  margin-bottom: 3rem;
+}
+
+.icons > a {
+  padding: 0.5rem;
+}
+
+.last-info > p {
+  color: rgb(166, 166, 166);
+  margin: 3rem 0 6rem 0;
+}
+
+.last-info,
+.icons {
+  grid-column: span 2;
+}
+
+.hamburger-menu:hover > hr {
+  border: 2px solid var(--color-pink);
+}
+
+.sign-up:hover > button {
+  background-color: transparent;
+}
+
+.showcase a:hover {
+  text-decoration: none;
+}
+
+.nft-cards > article:hover {
+  box-shadow: 0 10px 10px 0px rgba(0, 0, 0, 0.399);
+  transform: scale(1.1);
+  transform-origin: center;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+header > nav > a:hover,
+#hamburger-list a:hover {
+  font-weight: 700;
+}
+
+.icons > a:hover > i {
+  transform: scale(1.5);
+  transform-origin: center;
+}
+
+.hamburger-menu:target > hr {
+  border: 5px solid green;
+}
+
+@media screen and (min-width: 940px) {
+  header,
+  section,
+  footer {
+    padding-left: 5.5rem;
+    padding-right: 5.5rem;
+  }
+  header {
+    padding-top: 4rem;
+  }
+
+  .hero,
+  .footer-upsell {
+    padding-top: 12rem;
+  }
+
+  h1 {
+    font-size: 7rem;
+    margin-bottom: 3rem;
+  }
+
+  .hamburger,
+  .looks-like-a-bug-but-ill-do-it-anyway,
+  #hamburger-list {
+    display: none;
+  }
+
+  header > nav,
+  .opendoor,
+  .launch {
+    display: block;
+  }
+
+  .hero > img {
+    left: 45%;
+  }
+
+  .sign-up {
+    margin-bottom: 13.5rem;
+  }
+
+  .upsell > img,
+  .divider {
+    width: calc(100% - 11rem);
+  }
+  .upsell {
+    padding-left: 10rem;
+  }
+
+  .press {
+    margin-top: 6rem;
+    margin-bottom: 4rem;
+  }
+
+  .press,
+  .nft-cards,
+  .last-info {
+    justify-content: space-between;
+  }
+
+  .press,
+  .last-info {
+    display: flex;
+  }
+
+  .press > article {
+    margin-right: 0rem;
+  }
+
+  h1,
+  .footer-upsell > p,
+  .hero > p {
+    width: 44%;
+  }
+
+  .nft-cards {
+    gap: 0;
+    padding: 4rem 0 8rem 0;
+  }
+  .nft-cards > article {
+    min-width: 0;
+    width: 22.5%;
+  }
+
+  .nft-cards > article > img,
+  .nft-cards {
+    width: 100%;
+  }
+
+  .footer-upsell > img {
+    right: 22%;
+  }
+
+  .footer-upsell,
+  footer,
+  .upsell {
+    padding-top: 8rem;
+  }
+
+  .footer-upsell > h1,
+  .showcase > h2 {
+    margin-bottom: 2rem;
+  }
+
+  footer {
+    grid-template-columns: 50% repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .icons > img,
+  h1 {
+    margin-top: 0;
+  }
+
+  .icons {
+    grid-column: span 1;
+  }
+
+  .last-info {
+    grid-column: span 5;
+  }
+
+  .last-info > p {
+    margin: 6rem 0 3rem 0;
+  }
+
+  .divider {
+    margin-left: 5.5rem;
+  }
+
+  .additional-text {
+    display: inline;
+  }
+}
